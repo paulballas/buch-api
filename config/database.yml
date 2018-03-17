@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: buch-dev
+
+test:
+  <<: *default
+  database: buch-test
+
+production:
+  <<: *default
+  database: buch-prod
+  username: paulballas
+  password: <%= ENV['RAILS-REACT-BOILERPLATE_DATABASE_PASSWORD'] %>
