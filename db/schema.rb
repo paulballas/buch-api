@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319192834) do
+ActiveRecord::Schema.define(version: 20180511001535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180319192834) do
     t.string "coordinates", default: [], array: true
     t.string "url"
     t.boolean "tap_room"
+    t.boolean "online"
   end
 
   add_foreign_key "brews", "companies", column: "companies_id"
